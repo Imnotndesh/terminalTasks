@@ -4,7 +4,7 @@
 -  Has basic features to manage tasks and might be expanded to add even more features
 -  Mainly made this for a backend to my notes GTK app.....COMING SOON  
 # How to use
-- Just download a copy of our latest release ![Here](https://github.com/Imnotndesh/terminalTasks/releases)
+- Just download a copy of our latest release [Here](https://github.com/Imnotndesh/terminalTasks/releases)
 - On windows : run the `main.exe` executable and a terminal window will open with the program
 - On linux: run the `./main.sh` after granting execution permissions by running:
 ```
