@@ -47,27 +47,36 @@ def main():
     task_list.load_tasks(tasks_file)
 
     while True:
+        print(" ")
         print("1. Add Task\n2. Mark Task as Done\n3. Display Tasks\n4. Save and Exit")
         choice = input("Enter your choice: ")
 
         if choice == "1":
-            task_name = input("Enter task name: ")
+            task_name = input("\nEnter task name: ")
             task_list.add_task(task_name)
-            print(f"Task :{task_name} added successfully!")
+            print(f"> Task : '{task_name}' added successfully!")
         elif choice == "2":
-            task_name = input("Enter task name to mark as done (will also remove from list): ")
+            task_name = input("\nEnter task name to mark as done (will also remove from list): ")
             if task_list.mark_task_done(task_name, tasks_file):
-                print(f"Task: {task_name} marked as done")
+                print(f"> Task: '{task_name}' marked as done")
+                print("-----Remaining tasks------")
+                print(" ")
+                task_list.save_tasks(tasks_file)
+                task_list.display_tasks()
+                print("--------------------------")
             else:
-                print("Task not found.")
+                print("\nTask not found.")
         elif choice == "3":
+            print("-----Current saved tasks------")
+            print(" ")
             task_list.display_tasks()
+            print("------------------------------")
         elif choice == "4":
             task_list.save_tasks(tasks_file)
-            print("Tasks saved. Exiting program.")
+            print("\nTasks saved. Exiting program.")
             break
         else:
-            print("Invalid choice. Please try again.")
+            print("\nInvalid choice. Please try again.")
 
 
 if __name__ == "__main__":
